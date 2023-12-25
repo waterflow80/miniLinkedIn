@@ -1,0 +1,32 @@
+{
+  "name": "minilinkedin",
+  "version": "0.0.1",
+  "description": "A web application for generating resume and posting and/or finding job offers",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waterflow80/miniLinkedIn.git"
+  },
+  "keywords": [
+    "resume",
+    "linkedin",
+    "social",
+    "expressjs"
+  ],
+  "author": "haroune hassine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waterflow80/miniLinkedIn/issues"
+  },
+  "homepage": "https://github.com/waterflow80/miniLinkedIn#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "pino": "^8.17.1"
+  }
+}
