@@ -1,5 +1,5 @@
 import {expect, test} from 'vitest'
-import generateUser from './userGenerator'
+import generateUser from './user_generator'
 
 
 test("Initializing user with random attributes", () => {
