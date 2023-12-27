@@ -1,23 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>MiniLinkedIn</title>
-</head>
-<body>
-  <h1>Welcome to MiniLinkedIn</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <div class="container-md">
-    <div class="row">
-      <div class="col-4" style="background-color: aliceblue;">COL-4</div>
-      <div class="col-6" style="background-color: aqua;">COL-6</div>
-      <div class="col-2" style="background-color: bisque;">COL-2</div>
-    </div>
-  </div>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="jquery-3.7.1.min.js"></script>
-</body>
+    <!-- MiniLinkedIn CSS -->
+    <!-- <link type="text/css" href="/css/index.css" /> -->
+
+    <!-- AOS Animate -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- BOX Icons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS CODE  -->
+    <style>
+      /* Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+
+      /* SETUP */
+      :root {
+        /* Color Styles */
+        --primary: #1665b4;
+        --primary-light: #186ec5;
+        --dark-brown: #341413;
+        --gray-1: #798092;
+        --gray-2: #e6e6ed;
+        --white: #ffffff;
+
+        /* Font size Desktop */
+        --header-1: 64px;
+        --header-2: 48px;
+        --header-3: 42px;
+        --header-4: 32px;
+
+        --text-medium: 18px;
+        --text-regular: 16px;
+        --text-light: 13px;
+
+        /* Font weights */
+        --font-weight-bold: 700;
+        --font-weight-semi-bold: 600;
+        --font-weight-medium: 500;
+        --font-weight-regular: 400;
+        --font-weight-light: 400;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* BUTTON PRIMARY */
+      .btn {
+        padding: 15px 25px;
+        border-radius: 6px;
+        font-size: var(--text-medium);
+        font-weight: var(--font-weight-medium);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border: none;
+      }
+
+      .btn-primary:focus {
+        background-color: var(--primary-light);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-light);
+      }
+
+      /* BUTTON SECONDARY */
+
+      .btn-secondary {
+        background-color: var(--gray-2);
+        color: var(--gray-1);
+      }
+
+      .btn-secondary:focus {
+        background-color: var(--white);
+        box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.05) !important;
+        color: var(--gray-1);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--white);
+        box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.05) !important;
+        color: var(--gray-1);
+      }
+
+      /* NAVBAR */
+
+      .navbar-brand img {
+        padding-right: 16px;
+      }
+
+      .navbar-brand span {
+        font-size: var(--text-medium);
+        font-weight: var(--font-weight-medium);
+        color: var(--dark-brown);
+      }
+
+      .navbar {
+        padding: 49px 0;
+      }
+
+      a.nav-link {
+        margin-right: 39px;
+        font-size: var(--text-regular);
+        font-weight: var(--font-weight-regular);
+        color: var(--dark-brown) !important;
+      }
+
+      /* HERO */
+
+      section.hero {
+        margin: 5rem 0;
+      }
+
+      .text-label,
+      .text-hero-bold,
+      .text-hero-regular {
+        margin: 24px 0;
+      }
+
+      .text-label {
+        color: var(--primary);
+        font-size: var(--text-regular);
+        font-weight: var(--font-weight);
+        line-height: 31px;
+      }
+
+      .text-hero-bold {
+        color: var(--dark-brown);
+        font-size: var(--header-1);
+        font-weight: var(--font-weight-bold);
+        line-height: 75px;
+      }
+
+      .text-hero-regular {
+        color: var(--gray-1);
+        font-size: var(--text-regular);
+        font-weight: var(--font-weight-regular);
+        line-height: 31px;
+      }
+
+      /* Offers Section */
+      .card {
+        margin: 24px 12px;
+      }
+
+      section.offers {
+        margin: 9rem 0;
+      }
+
+      .text-headline-bold {
+        color: var(--dark-brown);
+        font-size: var(--header-2);
+        font-weight: var(--font-weight-bold);
+        line-height: 67px;
+      }
+    </style>
+    <!-- CSS CODE  -->
+
+    <title>MiniLinkedIn</title>
+  </head>
+  <body>
+    <!-- Navbar section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/assets/img/mini-logo.png"
+            alt="brand"
+            width="70px"
+            height="50px"
+          />
+          <span>MiniLinkedIn</span>
+        </a>
+        <button
+          class="navbar-toggler shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#"
+              >MiniLinkedIn</a
+            >
+            <a class="nav-link" href="#">About</a>
+          </div>
+          <a href="#" class="btn btn-primary">SignIn</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="copy" data-aos="fade-up" data-aos-duration="1800">
+              <div class="text-label">Changes your business is better</div>
+              <div class="text-hero-bold">Grow Up Your Mind In the future.</div>
+              <div class="text-hero-regular">
+                There are so many variations passages company or agency
+              </div>
+              <div class="cta">
+                <a href="#" class="btn btn-primary shadow-none"
+                  >Instant resume</a
+                >
+                <a
+                  href="#offers_section"
+                  class="btn btn-secondary shadow-none ms-3"
+                  >Explore offers</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 right-section"
+            data-aos="fade-up"
+            data-aos-duration="1300"
+          >
+            <img src="/assets/img/Mini2.png" alt="hero img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Offers Section -->
+    <section id="offers_section" class="offers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div
+              class="text-headline-bold"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
+              Explore Job Offers
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
+              <img
+                class="card-img-top"
+                src="/assets/img/scaleupagency_logo.jpeg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">AI Web Developer (Remote Internship)</h5>
+                <p class="card-text">
+                  As a SCALEUP Web Developer, you'll play a pivotal role in
+                  driving internal digital projects, spearheading the design and
+                  development of new domains, as well as optimizing existing
+                  ones. You'll need an innovative and can-learn mindset... Ready
+                  to dive in?
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Type:</strong> Full Time/Part Time internship (40/30h
+                  per week)
+                </li>
+                <li class="list-group-item">
+                  <strong>Compensation:</strong> Non-paid / Student's
+                  scholarships
+                </li>
+                <li class="list-group-item">
+                  <strong>Location:</strong> Remote
+                </li>
+              </ul>
+              <div class="card-body">
+                <a
+                  href="https://dk.linkedin.com/jobs/view/ai-web-developer-remote-internship-at-scaleup-agency-3787771715?refId=%2Fnwko2ZPbkxRUd11B%2BWSGw%3D%3D&trackingId=lZq%2BMBX4ccqamfas7h%2B11w%3D%3D&trk=public_jobs_topcard-title"
+                  class="card-link"
+                  target="_blank"
+                  >More Details</a
+                >
+                <a
+                  href="https://cz.linkedin.com/company/scaleupagency?trk=public_jobs_topcard-org-name"
+                  class="card-link"
+                  target="_blank"
+                  >SCALEUP.agency</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
+              <img class="card-img-top" src="/assets/img/talentkompass_deutschland_logo.jpeg" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Junior Frontend Developer (Remote Internship - IT)
+                </h5>
+                <p class="card-text">
+                  TalentKompass Deutschland, a leading Human Resources company
+                  based in Germany, is searching for a highly motivated Frontend
+                  Development Intern to join our esteemed client.
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Type:</strong> Remote Work
+                </li>
+                <li class="list-group-item">
+                  <strong>Requirements:</strong> Basic understanding of web
+                  development principles and practices...
+                </li>
+                <li class="list-group-item">
+                  <strong>Location:</strong> Remote Work
+                </li>
+              </ul>
+              <div class="card-body">
+                <a
+                  href="https://dk.linkedin.com/jobs/view/junior-frontend-developer-remote-internship-it-at-talentkompass-deutschland-3786034788?refId=BeeSTxgtsjR4ngnFo7SqPQ%3D%3D&trackingId=vTihaz%2FtB2MpXvJi%2Fuq2Yg%3D%3D&trk=public_jobs_topcard-title"
+                  class="card-link"
+                  target="_blank"
+                  >More Details</a
+                >
+                <a
+                  href="https://www.linkedin.com/company/talentkompass-deutschland?trk=public_jobs_topcard-org-name"
+                  class="card-link"
+                  target="_blank"
+                  >TalentKompass Deutschland</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link" target="_blank">Card link</a>
+                <a href="#" class="card-link" target="_blank">Another link</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link" target="_blank">Card link</a>
+                <a href="#" class="card-link" target="_blank">Another link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
