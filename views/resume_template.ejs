@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- AOS Animate CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- MiniLinkedIn CSS -->
+    <style>
+      /* Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+
+      /* SETUP */
+      :root {
+        /* Color Styles */
+        --primary: #1665b4;
+        --primary-light: #186ec5;
+        --dark-brown: #341413;
+        --gray-1: #798092;
+        --gray-2: #e6e6ed;
+        --white: #ffffff;
+
+        /* Font size Desktop */
+        --header-1: 64px;
+        --header-2: 48px;
+        --header-3: 42px;
+        --header-4: 32px;
+        --header-5: 28px;
+
+        --text-large: 20px;
+        --text-medium: 18px;
+        --text-regular: 16px;
+        --text-light: 13px;
+
+        /* Font weights */
+        --font-weight-bold: 700;
+        --font-weight-semi-bold: 600;
+        --font-weight-medium: 500;
+        --font-weight-regular: 400;
+        --font-weight-light: 400;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* BUTTON PRIMARY */
+      .btn {
+        padding: 15px 25px;
+        border-radius: 6px;
+        font-size: var(--text-medium);
+        font-weight: var(--font-weight-medium);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border: none;
+      }
+
+      .btn-primary:focus {
+        background-color: var(--primary-light);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-light);
+      }
+
+      /* BUTTON SECONDARY */
+
+      .btn-secondary {
+        font-size: var(--text-medium);
+        padding: 10px 15px;
+        background-color: var(--gray-2);
+        color: var(--gray-1);
+        margin-top: 12px;
+      }
+
+      .btn-secondary:focus {
+        background-color: var(--white);
+        box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.05) !important;
+        color: var(--gray-1);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--white);
+        box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.05) !important;
+        color: var(--gray-1);
+      }
+
+      /* NAVBAR */
+
+      .navbar-brand img {
+        padding-right: 16px;
+      }
+
+      .navbar-brand span {
+        font-size: var(--text-medium);
+        font-weight: var(--font-weight-medium);
+        color: var(--dark-brown);
+      }
+
+      .navbar {
+        padding: 49px 0;
+      }
+
+      a.nav-link {
+        margin-right: 39px;
+        font-size: var(--text-regular);
+        font-weight: var(--font-weight-regular);
+        color: var(--dark-brown) !important;
+      }
+
+      /* SEctions */
+      .headline-bold {
+        color: var(--primary-light);
+        font-size: var(--header-3);
+        font-weight: var(--font-weight-bold);
+        line-height: 52px;
+      }
+
+      .headline-medium {
+        color: black;
+        font-size: var(--header-5);
+        font-weight: var(--font-weight-semi-bold);
+        line-height: 36px;
+      }
+
+      .headline-small {
+        color: black;
+        font-size: var(--text-large);
+        font-weight: var(--font-weight-bold);
+        line-height: 20px;
+      }
+
+      .content {
+        font-size: var(--text-medium);
+        font-weight: var(--font-weight-regular);
+        margin: 12px 0;
+      }
+
+      section {
+        margin: 18px 0;
+      }
+
+      .btn-reset {
+        background-color: var(--gray-2);
+        border: none;
+        margin-left: 12px;
+      }
+
+      .btn-reset:focus {
+        background-color: var(--white);
+      }
+
+      .btn-reset:hover {
+        background-color: var(--white);
+      }
+
+      hr {
+        top: 20px;
+        border: none;
+        height: 8px;
+        background: var(--primary);
+      }
+
+      li {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/assets/img/mini-logo.png"
+            alt="brand"
+            width="70px"
+            height="50px"
+          />
+          <span>MiniLinkedIn</span>
+        </a>
+        <button
+          class="navbar-toggler shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="/"
+              >MiniLinkedIn</a
+            >
+            <a class="nav-link" href="#">About</a>
+          </div>
+          <a href="#" class="btn btn-primary">SignIn</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="body" data-aos="zoom-in" data-aos-duration="1500">
+      <!-- Personal Info Section -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 headline-bold">John Smith</div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 content">Software Engineer</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 content">
+            <i class="bx bx-envelope"></i> Johnsmith@gmail.com
+          </div>
+          <div class="col-md-3 content">
+            <i class="bx bxs-phone"></i> +1 2546852024
+          </div>
+          <div class="col-md-3 content">
+            <i class="bx bxs-location-plus"></i> Salt Lake, Utah
+          </div>
+          <div class="col-md-3 content">
+            <i class="bx bx-link-external"></i> johnblog.io
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-1">
+            <hr />
+          </div>
+          <div class="col md-11 headline-medium">Work Experience</div>
+        </div>
+        <section class="elment">
+          <div class="row headline-small">
+            <div class="col">Apache Inc</div>
+          </div>
+          <div class="row content">
+            <div class="col-md-6">Software Engineer</div>
+            <div class="col-md-6 .offset-md-6">Jun 2019 - Aug 2021</div>
+          </div>
+          <div class="row content">
+            <ul>
+              <li>
+                Developed software for monitoring the security issues of the
+                Apache web server
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="elment">
+          <div class="row headline-small">
+            <div class="col">Google</div>
+          </div>
+          <div class="row content">
+            <div class="col-md-6">Project Manager</div>
+            <div class="col-md-6 .offset-md-6">Sep 2021 - Present</div>
+          </div>
+          <div class="row content">
+            <ul>
+              <li>
+                Mentoring a cloud infrastructure security enhancements project
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-1">
+            <hr />
+          </div>
+          <div class="col md-11 headline-medium">Education</div>
+        </div>
+        <section class="elment">
+          <div class="row headline-small">
+            <div class="col">Alabama University</div>
+          </div>
+          <div class="row content">
+            <div class="col-md-6">Master in Computer Science - 3.74 GPA</div>
+            <div class="col-md-6 .offset-md-6">May 2022</div>
+          </div>
+        </section>
+        <section class="elment">
+          <div class="row headline-small">
+            <div class="col">MIT</div>
+          </div>
+          <div class="row content">
+            <div class="col-md-6">
+              Bachelor in software engineering - 3.82 GPA
+            </div>
+            <div class="col-md-6 .offset-md-6">May 2019</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-1">
+            <hr />
+          </div>
+          <div class="col md-11 headline-medium">PROJECT</div>
+        </div>
+        <section class="elment">
+          <div class="row headline-small">
+            <div class="col">MiniLinkedIn</div>
+          </div>
+          <div class="row content">
+            <div class="col-md-12">
+              A small version of Linked. It allows instant creation of resumes
+              and finding job matches.
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-1">
+            <hr />
+          </div>
+          <div class="col md-11 headline-medium">SKILLS</div>
+        </div>
+        <section class="elment">
+          <div class="row content">
+            <div class="col-md-4">Python - Intermediate</div>
+            <div class="col-md-4">Java - Advanced</div>
+            <div class="col-md-4">ExpressJs - Beginner</div>
+            <div class="col-md-4">Devops - Intermediate</div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <br />
+    <br />
+    <!-- Validate Section -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Download PDF</button>
+          </div>
+          <div class="col-md-4">
+            <button type="reset" class="btn btn-reset" onclick="discard()">Discard</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS Animate Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      function discard() {
+        window.location = '/resume';
+    }
+    </script>
+  </body>
+</html>
