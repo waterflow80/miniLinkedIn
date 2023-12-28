@@ -27,3 +27,5 @@ Here are the steps to setup the database image locally:
 4. `$ CREATE KEYSPACE if NOT EXISTS mini_linked_in WITH replication = {'class': 'SimpleStrategy', 'replication_factor':1};`
 5. `$ use mini_linked_in ;`
 6. `$ CREATE TABLE user (id UUID PRIMARY KEY, email text, firstname text, lastname text, birthdate date, education text, experience text, projects text, skills text);`
+
+[This](https://www.youtube.com/watch?v=z52FK_kJvpw) might be a useful tutorial to connect cassandra to nodejs app.
