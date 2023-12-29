@@ -18,14 +18,20 @@ The MiniLinkedIn project aims at providing a web based user interface that allow
 4. `$ npm start` (Start the application)
 
 ## Database Setup
-We're using a docker image of **cassandra db** to store our data.
+We're using a docker image of **MongoDB** to store our data.
 Here are the steps to setup the database image locally:
 
-1. `$ docker pull cassandra:latest`
-2. `$ docker run -d --name cassandra-docker -p 9042:9042 cassandra`
-3. `$ sudo docker exec -it cassandra-docker cqlsh`
-4. `$ CREATE KEYSPACE if NOT EXISTS mini_linked_in WITH replication = {'class': 'SimpleStrategy', 'replication_factor':1};`
-5. `$ use mini_linked_in ;`
-6. `$ CREATE TABLE user (id UUID PRIMARY KEY, email text, firstname text, lastname text, birthdate date, education text, experience text, projects text, skills text);`
+1. `$ docker pull mongodb/mongodb-community-server`
+2. `$ docker run --name mongo -p 27017:27017 -d mongodb/mongodb-community-server:latest` (**Note** the `-p` port forwarding is important)
+3. `$ docker exec -it mongo mongosh` This would generate the following output at connection time: 
+```bash
+Current Mongosh Log ID:	658f1d3e............
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1
+Using MongoDB:		x.x.x
+Using Mongosh:		x.x.x
 
-[This](https://www.youtube.com/watch?v=z52FK_kJvpw) might be a useful tutorial to connect cassandra to nodejs app.
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+```
+The `Connecting to` uri will be used in **NodeJs** to connect to Mongo.
+
+
