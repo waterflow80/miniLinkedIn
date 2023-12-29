@@ -1,14 +1,24 @@
-const dotenv = require("dotenv")
-dotenv.config()
+const dotenv = require("dotenv");
+const { MongoClient } = require("mongodb");
+dotenv.config();
 
-var MongoClient = require("mongodb").MongoClient;
-var url = `mongodb://${process.env.SERVER}:27017/${process.env.DATABASE_NAME}`;
+const uri = process.env.DB_URI;
+export const client = new MongoClient(uri);
 
-console.log(url);
-MongoClient.connect(url, (err, db) => {
-  if (err) throw err;
-  console.log("Database created!");
-  db.close();
-});
 
-console.log("finish");
+async function connect() {
+  try {
+    await client.connect();
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function closeDb() {
+  await client.close();
+}
+
+/**Connect to mongodb  */
+export function initMongoDb() {
+  connect().catch(console.error);
+}
