@@ -195,7 +195,7 @@
     </nav>
 
     <!-- Form -->
-    <form method="GET" action="/resume/preview">
+    <form method="Post" action="/resume/preview">
       <!-- Overview Section -->
       <section>
         <div class="container">
@@ -214,24 +214,26 @@
             <!-- First Name -->
             <div class="col-md-4">
               <div class="form-group">
-                <label for="inputEmail4">First Name</label>
+                <label for="inputFirstName">First Name</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="inputEmail4"
-                  placeholder="Email"
+                  id="inputFirstName"
+                  placeholder="John"
+                  name="firstName"
                 />
               </div>
             </div>
             <!-- Last Name -->
             <div class="col-md-4">
               <div class="form-group">
-                <label for="inputPassword4">Last Name</label>
+                <label for="inputLastName">Last Name</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
-                  id="inputPassword4"
-                  placeholder="Password"
+                  id="inputLastName"
+                  placeholder="Mcarthy"
+                  name="lastName"
                 />
               </div>
             </div>
@@ -240,24 +242,72 @@
             <!-- email -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">Email</label>
+                <label for="inputEmail">Email</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="inputEmail4"
-                  placeholder="Email"
+                  id="inputEmail"
+                  placeholder="John45@yahoo.com"
+                  name="email"
                 />
               </div>
             </div>
             <!-- Last Name -->
             <div class="col-md-3">
               <div class="form-group">
-                <label for="inputPassword4">Phone</label>
+                <label for="inputPhone">Phone</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
-                  id="inputPassword4"
+                  id="inputPhone"
                   placeholder="+1 25405221469"
+                  name="phone"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row" data-aos="fade-up" data-aos-duration="1800">
+            <!-- Bio -->
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputBio">Bio</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputBio"
+                  placeholder="Software Engineer"
+                  name="bio"
+                />
+              </div>
+            </div>
+
+            <!-- Location -->
+            <!-- Bio -->
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputLocation">Location</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputLocation"
+                  placeholder="Stockholm, DK"
+                  name="location"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Website -->
+          <div class="row" data-aos="fade-up" data-aos-duration="1800">
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="inputWebsite">Website/Personal Blog</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputWebsite"
+                  placeholder="meatjohn.io"
+                  name="website"
                 />
               </div>
             </div>
@@ -285,12 +335,13 @@
             <!-- Company -->
             <div class="col-md-8">
               <div class="form-group">
-                <label for="inputEmail4">Company</label>
+                <label for="inputCompany">Company</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="inputEmail4"
-                  placeholder="Email"
+                  id="inputCompany"
+                  placeholder="Shape"
+                  name="company[]"
                 />
               </div>
             </div>
@@ -299,24 +350,26 @@
             <!-- Job Title -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">Job Title</label>
+                <label for="inputJob">Job Title</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputJob"
                   placeholder="Software Engineer"
+                  name="job[]"
                 />
               </div>
             </div>
             <!-- Last Name -->
             <div class="col-md-3">
               <div class="form-group">
-                <label for="inputPassword4">Date</label>
+                <label for="inputDateJob">Date</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputPassword4"
+                  id="inputDateJob"
                   placeholder="Aug 2022 - Present"
+                  name="jobDate[]"
                 />
               </div>
             </div>
@@ -325,12 +378,13 @@
           <div class="row" data-aos="fade-up" data-aos-duration="1800">
             <div class="col-md-8">
               <div class="form-group">
-                <label for="inputPassword4">Description</label>
+                <label for="inputDescriptionJob">Description</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputPassword4"
+                  id="inputDescriptionJob"
                   placeholder="."
+                  name="jobDescription[]"
                 />
               </div>
             </div>
@@ -366,24 +420,26 @@
             <!-- School -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">School</label>
+                <label for="inputSchool">School</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputSchool"
                   placeholder="MIT"
+                  name="school[]"
                 />
               </div>
             </div>
             <!-- Date -->
             <div class="col-md-3">
               <div class="form-group">
-                <label for="inputEmail4">Date</label>
+                <label for="inputDateSchool">Date</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputDateSchool"
                   placeholder="May 2019"
+                  name="schoolDate[]"
                 />
               </div>
             </div>
@@ -393,24 +449,26 @@
             <!-- Degree & Major -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">Degree & Major</label>
+                <label for="inputDegree">Degree & Major</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputDegree"
                   placeholder="Bachelor of Science in Computer Engineering"
+                  name="degreeNmajor[]"
                 />
               </div>
             </div>
             <!-- Date -->
             <div class="col-md-3">
               <div class="form-group">
-                <label for="inputEmail4">GPA</label>
+                <label for="inputGpa">GPA</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputGpa"
                   placeholder="3.79"
+                  name="gpa[]"
                 />
               </div>
             </div>
@@ -447,24 +505,26 @@
             <!-- Project Name -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">Project Name</label>
+                <label for="inputProjectName">Project Name</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputProjectName"
                   placeholder="miniLinkedIn"
+                  name="projectName[]"
                 />
               </div>
             </div>
             <!-- Date -->
             <div class="col-md-3">
               <div class="form-group">
-                <label for="inputEmail4">Date</label>
+                <label for="inputDateProject">Date</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputDateProject"
                   placeholder="Fall 2023"
+                  name="projectDate[]"
                 />
               </div>
             </div>
@@ -473,12 +533,13 @@
           <div class="row" data-aos="fade-up" data-aos-duration="1800">
             <div class="col-md-8">
               <div class="form-group">
-                <label for="inputPassword4">Description</label>
+                <label for="inputDescriptionProject">Description</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputPassword4"
+                  id="inputDescriptionProject"
                   placeholder="."
+                  name="projectDescription[]"
                 />
               </div>
             </div>
@@ -515,22 +576,28 @@
             <!-- Skill Set -->
             <div class="col-md-5">
               <div class="form-group">
-                <label for="inputEmail4">Skill</label>
+                <label for="inputSkill">Skill</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="inputEmail4"
+                  id="inputSkill"
                   placeholder="Java"
+                  name="skill[]"
                 />
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <label for="expertiseList">Expertise Level</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="1">Beginner</option>
-                  <option value="2">Intermediate</option>
-                  <option value="3" selected>Advanced</option>
+                <label for="expertiseLevel">Expertise Level</label>
+                <select
+                  id="expertiseLevel"
+                  class="form-select"
+                  aria-label="Default select example"
+                  name="expertiseLevel[]"
+                >
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced" selected>Advanced</option>
                 </select>
               </div>
             </div>
@@ -574,5 +641,6 @@
     <script>
       AOS.init();
     </script>
+
   </body>
 </html>

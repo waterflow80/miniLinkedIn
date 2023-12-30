@@ -1,14 +1,16 @@
 export default class User {
   _id;
-  _email
-  _firstName
-  _lastName
-  _birthDate
-  _bio
-  _education
-  _experience
-  _skills
-  _otherInfo
+  _email;
+  _firstName;
+  _lastName;
+  _birthDate;
+  _bio;
+  _education;
+  _experience;
+  _skills;
+  _projects;
+  _location;
+  _website;
 
   constructor() {}
   // constructor(id, email, firstName, lastName, birthDate, bio, education, experience, skills, otherInfo) {
@@ -24,68 +26,86 @@ export default class User {
   //   this.#otherInfo = otherInfo
   // }
 
-  // Getters 
+  // Getters
   getId() {
     return this._id;
-  } 
+  }
   getEmail() {
-    return this._email
+    return this._email;
   }
   getFirstName() {
-    return this._firstName
+    return this._firstName;
   }
   getLastName() {
-    return this._lastName
+    return this._lastName;
   }
-  getBirthDate() {
-    return this._birthDate
-  } 
   getBio() {
-    return this._bio
+    return this._bio;
   }
   getEducation() {
-    return this._education
+    return this._education;
   }
   getExperience() {
-    return this._experience
+    return this._experience;
   }
   getSkills() {
-    return this._skills
+    return this._skills;
   }
-  getOtherInfo() {
-    return this._otherInfo
+  getProjects() {
+    return this._projects;
+  }
+
+  getPhone() {
+    return this._phone;
+  }
+
+  getLocation() {
+    return this._location;
+  }
+
+  getWebsite() {
+    return this._website;
   }
 
   // Setters
   setId(id) {
-    this._id = id
+    this._id = id;
   }
   setEmail(email) {
-    this._email = email
+    this._email = email;
   }
   setFirstName(firstName) {
-    this._firstName = firstName
+    this._firstName = firstName;
   }
   setLastName(lastName) {
-    this._lastName = lastName
-  }
-  setBirthDate(birthDate) {
-    this._birthDate = birthDate
+    this._lastName = lastName;
   }
   setBio(bio) {
-    this._bio = bio
+    this._bio = bio;
   }
   setEducation(education) {
-    this._education = education
+    this._education = education;
   }
   setExperience(experience) {
-    this.experience = experience
+    this._experience = experience;
   }
   setSkills(skills) {
-    this._skills = skills
+    this._skills = skills;
   }
-  setOtherInfo(otherInfo) {
-    this._otherInfo = otherInfo
+  setProjects(projects) {
+    this._projects = projects;
+  }
+
+  setPhone(phone) {
+    this._phone = phone;
+  }
+
+  setLocation(location) {
+    this._location = location;
+  }
+
+  setWebsite(website) {
+    this._website = website;
   }
 
   toString() {
@@ -94,9 +114,12 @@ export default class User {
     Email: ${this._email} \n
     Birthdate: ${this._birthDate} \n
     Bio: ${this._bio} \n
+    Location: ${this._location} \n
+    Website: ${this._website} \n
+    Phone ${this._phone} \n
     Education: ${this._education} \n
     Experience: ${this._experience} \n
     Skills: ${this._skills} \n
-    OtherInfo: ${this._otherInfo} }`
+    Projects: ${this._projects} }`;
   }
 }
