@@ -14,8 +14,9 @@ The MiniLinkedIn project aims at providing a web based user interface that allow
 ## Run Locally
 1. `$ git clone https://github.com/waterflow80/miniLinkedIn.git` (clone the repository)
 2. `$ npm install` (install the required modules)
-3. `$ npm test` (Optional: to run the tests)
-4. `$ npm start` (Start the application)
+3. Setup environment variables in the `.env` file
+4. `$ npm test` (Optional: to run the tests)
+5. `$ npm start` (Start the application)
 
 ## Database Setup
 We're using a docker image of **MongoDB** to store our data.
