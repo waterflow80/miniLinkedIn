@@ -4,8 +4,10 @@ export default function generateUser(id) {
   var user1 = new User()
   user1.setId(id)
   user1.setEmail(`fakeuser${id}@gmail.com`)
-  user1.setBirthDate(new Date(`${id}: Jannuary 6, 1997`))
-  user1.setBio(`${id}: I am a cs student and I'm very passionate about programming\n`)
+  user1.setBio(`${id}: Software Engineering Student\n`)
+  user1.setLocation("New York")
+  user1.setPhone("+1254865684")
+  user1.setWebsite("mimou.io")
   let education = {}
   education["Penn_State_High_School"] = "High School Diploma"
   education["MIT"] = "Bachelor in Computer Science"
